@@ -1,9 +1,16 @@
 
-export default function Home() {
+import Hero from "./hero/hero";
+import Navbar from "./navbar/navbar";
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-     welcome nishant welcom again
+    <div>
+      <Navbar />
+      <main style={{ paddingTop: "80px" }}>
+        <h1>Welcome to the Website</h1>
+        <Hero/>
+        {/* Additional page content */}
+      </main>
     </div>
   );
 }
- 
