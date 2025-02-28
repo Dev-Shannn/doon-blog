@@ -22,12 +22,24 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (menuOpen && !(event.target as HTMLElement).closest(".mobile-menu")) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [menuOpen]);
+
+  const toggleMenu = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setMenuOpen((prev) => !prev);
+  };
   const toggleSearch = () => setShowSearch((prev) => !prev);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Implement your search logic here
   };
 
   const scrollToTop = () => {
@@ -43,25 +55,22 @@ const Navbar: React.FC = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <div className="navbar-container">
-          {/* Left: Company Name */}
           <div className="navbar-left">
             <Link href="/" className="navbar-logo">
               Doon Blogs
             </Link>
           </div>
-          {/* Right: Search Icon & Hamburger Menu Button */}
           <div className="navbar-right">
             <button className="navbar-search-btn" onClick={toggleSearch}>
               <FaSearch />
             </button>
             <button className="navbar-menu-btn" onClick={toggleMenu}>
-              <FaBars />
+              {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -72,32 +81,15 @@ const Navbar: React.FC = () => {
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
             <ul>
-              <li>
-                <Link href="/" onClick={() => setMenuOpen(false)}>
-                  Top colleges in Dehradun
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" onClick={() => setMenuOpen(false)}>
-                  Top Schools in Dehradun
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" onClick={() => setMenuOpen(false)}>
-                  Top Coaching Institutes in Dehradun
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" onClick={() => setMenuOpen(false)}>
-                  Top Hospitals in Dehradun
-                </Link>
-              </li>
+              <li><Link href="/" onClick={() => setMenuOpen(false)}>Top colleges in Dehradun</Link></li>
+              <li><Link href="/about" onClick={() => setMenuOpen(false)}>Top Schools in Dehradun</Link></li>
+              <li><Link href="/services" onClick={() => setMenuOpen(false)}>Top Coaching Institutes in Dehradun</Link></li>
+              <li><Link href="/contact" onClick={() => setMenuOpen(false)}>Top Hospitals in Dehradun</Link></li>
             </ul>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Search Overlay */}
       <AnimatePresence>
         {showSearch && (
           <motion.div
@@ -114,10 +106,7 @@ const Navbar: React.FC = () => {
               exit={{ y: -50 }}
               transition={{ duration: 0.3 }}
             >
-              <button
-                className="close-search"
-                onClick={() => setShowSearch(false)}
-              >
+              <button className="close-search" onClick={() => setShowSearch(false)}>
                 <FaTimes />
               </button>
               <form className="search-form" onSubmit={handleSearchSubmit}>
@@ -131,7 +120,6 @@ const Navbar: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* Back to Top Button */}
       <AnimatePresence>
         {showBackToTop && (
           <motion.button

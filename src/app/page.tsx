@@ -6,8 +6,7 @@ export default function HomePage() {
   return (
     <div>
       <Navbar />
-      <main style={{ paddingTop: "80px" }}>
-        <h1>Welcome to the Website</h1>
+      <main style={{ paddingTop: "1px" }}>
         <Hero/>
         {/* Additional page content */}
       </main>
