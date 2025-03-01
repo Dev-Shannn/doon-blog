@@ -3,7 +3,7 @@
 .hero {
   position: relative;
   height: 100vh;
-  background: url('/path/to/your/background.jpg') no-repeat center/cover;
+  background: url('/hero-bg.jpg') no-repeat center/cover;  /* Remove 'public' from path */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,8 +16,12 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    135deg,
+    rgba(106, 13, 173, 0.3),    /* Even lighter overlay */
+    rgba(142, 68, 173, 0.2)     /* Even lighter overlay */
+  );
+  backdrop-filter: blur(1px);    /* Minimal blur */
   z-index: 1;
 }
 

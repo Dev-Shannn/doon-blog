@@ -94,14 +94,15 @@
   /* Mobile Menu */
   .mobile-menu {
     position: fixed;
-    top: 60px;
+    top: 50px;  /* Adjusted top position */
     right: 0;
     width: 220px;
-    background: #1a1a1a;
+    background: #382347;  /* Lighter blackish-purple color */
     color: #fff;
-    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.5);
+    box-shadow: -4px 0 20px rgba(105, 19, 167, 0.4);
     z-index: 900;
-    border-radius: 8px 0 0 8px;
+    border-radius: 5px 0 0 17px;  /* Increased border radius */
+    padding: 0.5rem 0;  /* Added padding for better spacing */
   }
   
   .mobile-menu ul {
@@ -226,4 +227,3 @@
       width: 200px;
     }
   }
-  
