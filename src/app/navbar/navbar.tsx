@@ -11,6 +11,7 @@ const Navbar: React.FC = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,22 +25,30 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
-      if (menuOpen && !(event.target as HTMLElement).closest(".mobile-menu")) {
+      if (menuOpen && !(event.target as HTMLElement).closest(".mobile-menu, .navbar-menu-btn")) {
         setMenuOpen(false);
+      }
+      if (showSearch && !(event.target as HTMLElement).closest(".search-bar, .navbar-search-btn")) {
+        setShowSearch(false);
       }
     };
     document.addEventListener("click", handleOutsideClick);
     return () => document.removeEventListener("click", handleOutsideClick);
-  }, [menuOpen]);
+  }, [menuOpen, showSearch]);
 
   const toggleMenu = (e: React.MouseEvent) => {
     e.stopPropagation();
     setMenuOpen((prev) => !prev);
   };
-  const toggleSearch = () => setShowSearch((prev) => !prev);
+
+  const toggleSearch = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setShowSearch((prev) => !prev);
+  };
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Searching for:", searchQuery);
   };
 
   const scrollToTop = () => {
@@ -59,6 +68,28 @@ const Navbar: React.FC = () => {
             <Link href="/" className="navbar-logo">
               Doon Blogs
             </Link>
+          </div>
+          <div className="navbar-center">
+            <AnimatePresence>
+              {showSearch && (
+                <motion.form
+                  className="search-bar"
+                  onSubmit={handleSearchSubmit}
+                  initial={{ opacity: 0, width: 0 }}
+                  animate={{ opacity: 1, width: "220px" }}
+                  exit={{ opacity: 0, width: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    autoFocus
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
+                </motion.form>
+              )}
+            </AnimatePresence>
           </div>
           <div className="navbar-right">
             <button className="navbar-search-btn" onClick={toggleSearch}>
@@ -86,36 +117,6 @@ const Navbar: React.FC = () => {
               <li><Link href="/services" onClick={() => setMenuOpen(false)}>Top Coaching Institutes in Dehradun</Link></li>
               <li><Link href="/contact" onClick={() => setMenuOpen(false)}>Top Hospitals in Dehradun</Link></li>
             </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {showSearch && (
-          <motion.div
-            className="search-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <motion.div
-              className="search-container"
-              initial={{ y: -50 }}
-              animate={{ y: 0 }}
-              exit={{ y: -50 }}
-              transition={{ duration: 0.3 }}
-            >
-              <button className="close-search" onClick={() => setShowSearch(false)}>
-                <FaTimes />
-              </button>
-              <form className="search-form" onSubmit={handleSearchSubmit}>
-                <input type="text" placeholder="Search..." />
-                <button type="submit">
-                  <FaSearch />
-                </button>
-              </form>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
