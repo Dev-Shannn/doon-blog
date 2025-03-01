@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}
         >
           <Link href="/blog" className="hero-btn primary">Start Reading</Link>
-          <Link href="/about" className="hero-btn secondary">Discover More</Link>
+          <Link href="/about" className="hero-btn secondary">Discover More.</Link>
         </motion.div>
       </div>
     </section>
