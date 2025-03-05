@@ -14,7 +14,7 @@ const featuredBlogs = [
   {
     id: 2,
     title: "Why Study in Dehradun?",
-    description: "Discover why Dehradun is becoming a top destination for higher education.",
+    description: "Discover why dehradun is becoming a top destination for higher education.",
     image: "/college2.jpg",
     link: "/blog/why-study-in-dehradun",
   },
