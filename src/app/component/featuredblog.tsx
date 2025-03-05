@@ -6,7 +6,7 @@ import styles from "./featuredblogs.module.css"; // ✅ Corrected import
 const featuredBlogs = [
   {
     id: 1,
-    title: "Top 10 Colleges in Dehradun",
+    title: "UPES Dehradun - Top 10 Colleges in Dehradun",
     description: "A curated list of the best colleges based on infrastructure, faculty, and placements.",
     image: "/college1.jpg",
     link: "/blog/top-10-colleges-dehradun",
