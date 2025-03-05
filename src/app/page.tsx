@@ -1,14 +1,15 @@
-
 import Hero from "./hero/hero";
 import Navbar from "./navbar/navbar";
+import FeaturedBlogs from './component/featuredblog'
 
-export default function HomePage() {
+export default function Home() {
   return (
     <div>
       <Navbar />
       <main style={{ paddingTop: "1px" }}>
         <Hero/>
         {/* Additional page content */}
+        <FeaturedBlogs />
       </main>
     </div>
   );
