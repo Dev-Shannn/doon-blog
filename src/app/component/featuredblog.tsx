@@ -7,13 +7,13 @@ const featuredBlogs = [
   {
     id: 1,
     title: "UPES Dehradun ",
-    description: "UPES Dehradun is a premier university known for its excellence in engineering, law, management, and applied sciences, offering industry-focused education and top-tier placements.",
+    description: "UPES Dehradun is known for its excellence in engineering, law, management, and applied sciences, offering industry-focused education and top-tier placements.",
     image: "/college1.jpg",
     link: "/blog/top-10-colleges-dehradun",
   },
   {
     id: 2,
-    title: "GRaphic era Dehradun",
+    title: "Graphic era Dehradun",
     description: "Graphic Era Deemed to be University is a leading institution in Dehradun, offering a wide range of courses in engineering, management, computer applications, and more.",
     image: "/college2.jpg",
     link: "/blog/why-study-in-dehradun",
