@@ -1,7 +1,7 @@
-/* Background - Smooth Royal Purple Gradient */
+/* Background - Smooth Light Blue Gradient */
 .section {
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #2a0e61, #450a78, #3b0f70);
+  background: linear-gradient(135deg, #4193c5, #8f246f);
   background-size: 200% 200%;
   animation: gradientShift 6s ease infinite;
 }
@@ -24,7 +24,7 @@
 .heading {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #e0d9ff;
+  color: #f8e3e3;
   text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
   margin-bottom: 3rem;
   text-transform: uppercase;
@@ -40,19 +40,19 @@
 
 /* Neumorphism Card */
 .card {
-  background: #322160;
+  background: #f8f8ff;
   border-radius: 20px;
   padding: 1.5rem;
-  box-shadow: 8px 8px 16px #1b0e3b, -8px -8px 16px #49308b;
+  box-shadow: 3px 3px 3px #dcdcdc, -3px -3px 3px #ffffff;
   transition: all 0.3s ease;
   text-decoration: none;
-  color: white;
+  color: #000;
   display: flex;
   flex-direction: column;
 }
 
 .card:hover {
-  box-shadow: 10px 10px 20px #1b0e3b, -10px -10px 20px #49308b;
+  box-shadow: 10px 10px 20px #dcdcdc, -10px -10px 20px #ffffff;
   transform: translateY(-5px);
 }
 
@@ -85,13 +85,13 @@
 .title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #f0e7ff;
+  color: #03080c;
   margin-bottom: 0.5rem;
 }
 
 .description {
   font-size: 1rem;
-  color: #b8a9ff;
+  color: #5f9ea0;
   margin-bottom: 1rem;
 }
 
@@ -99,12 +99,12 @@
 .readMore {
   font-size: 1rem;
   font-weight: 600;
-  color: #c79aff;
+  color: #6495ed;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .readMore:hover {
-  color: #e1b6ff;
+  color: #87cefa;
   transform: translateX(5px);
 }
 
