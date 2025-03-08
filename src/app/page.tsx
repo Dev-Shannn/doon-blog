@@ -1,6 +1,6 @@
 import Hero from "./hero/hero";
 import Navbar from "./navbar/navbar";
-import FeaturedBlogs from './component/featuredblog'
+import FeaturedBlogs from './pages/topEngineering/featuredblog'
 
 export default function Home() {
   return (

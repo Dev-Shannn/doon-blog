@@ -42,13 +42,16 @@
 .card {
   background: #f8f8ff;
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: 1rem; /* Reduced padding */
   box-shadow: 3px 3px 3px #dcdcdc, -3px -3px 3px #ffffff;
   transition: all 0.3s ease;
   text-decoration: none;
   color: #000;
   display: flex;
   flex-direction: column;
+  width: 330px; /* Fixed width */
+  height: 440px; /* Fixed height */
+  margin: auto;
 }
 
 .card:hover {
@@ -101,6 +104,7 @@
   font-weight: 600;
   color: #6495ed;
   transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer; /* Add this line */
 }
 
 .readMore:hover {
