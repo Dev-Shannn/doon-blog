@@ -11,6 +11,7 @@
   text-align: center;
   padding: 0 1rem;
   overflow: hidden;
+  background-attachment: fixed; /* Corrected line for parallax effect */
 }
 
 /* Optional: Make overlay more transparent */
@@ -111,7 +112,7 @@
 
 @keyframes slideIn {
   from { transform: translateY(-30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(0); opacity: 1); }
 }
 
 /* Responsive Design */
