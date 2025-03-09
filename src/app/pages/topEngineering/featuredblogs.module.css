@@ -1,12 +1,12 @@
-/* Background - Smooth Light Blue Gradient */
+/* Background - Glowing Space Effect */
 .section {
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #4193c5, #8f246f);
-  background-size: 200% 200%;
-  animation: gradientShift 6s ease infinite;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
 }
 
-/* Subtle Gradient Animation */
+/* Gradient Animation */
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -15,110 +15,170 @@
 
 /* Main Container */
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 20px;
 }
 
-/* Heading - Sleek & Modern */
+/* Heading - Premium Glowing Effect */
 .heading {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #f8e3e3;
-  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
-  margin-bottom: 3rem;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 25px #8f43ee;
+  margin-bottom: 4rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
 }
 
-/* Responsive Grid Layout */
+/* 🔥 Responsive Grid Layout */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 2rem;
+  justify-items: center;
 }
 
-/* Neumorphism Card */
+/* ✅ ULTIMATE GLOWING FLOATING CARD */
 .card {
-  background: #f8f8ff;
+  background: #111;
   border-radius: 20px;
-  padding: 1rem; /* Reduced padding */
-  box-shadow: 3px 3px 3px #dcdcdc, -3px -3px 3px #ffffff;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  width: 340px;
+  height: 450px;
+  color: #fff;
   text-decoration: none;
-  color: #000;
   display: flex;
   flex-direction: column;
-  width: 330px; /* Fixed width */
-  height: 440px; /* Fixed height */
-  margin: auto;
+  position: relative;
+  transition: all 0.5s ease;
+  border: none;
+
+  /* ✅🔥 NEON GLOW ALL AROUND */
+  box-shadow: 
+    0 0 15px rgba(138, 43, 226, 0.3),
+    0 0 30px rgba(138, 43, 226, 0.2),
+    0 0 50px rgba(138, 43, 226, 0.1);
 }
 
+/* ✅🔥 HOVER LIFT-UP EFFECT */
 .card:hover {
-  box-shadow: 10px 10px 20px #dcdcdc, -10px -10px 20px #ffffff;
-  transform: translateY(-5px);
+  transform: translateY(-10px) scale(1.02); /* Reduced movement and scale */
+  border: none;
+  background: #191919;
+  
+  /* 🔥 INCREASE GLOW ON HOVER */
+  box-shadow: 
+    0 0 20px #8f43ee,
+    0 0 35px rgba(143, 67, 238, 0.6),
+    0 0 50px rgba(143, 67, 238, 0.4);
 }
 
-/* Image Wrapper */
+/* ✅ Image Section - Smooth Zoom */
 .imageWrapper {
   position: relative;
   width: 100%;
-  height: 200px;
-  border-radius: 15px;
+  height: 220px;
   overflow: hidden;
+  border-bottom: 3px solid #333;
 }
 
+/* ✅ Image Hover Effect */
 .image {
-  object-fit: cover;
   width: 100%;
   height: 100%;
-  transition: transform 0.3s ease;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .card:hover .image {
   transform: scale(1.05);
 }
 
-/* Content */
+/* ✅ Content Section */
 .content {
-  padding: 1.2rem 0;
-  text-align: left;
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ✅ Title */
 .title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #03080c;
-  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
 }
 
+/* ✅ Description */
 .description {
-  font-size: 1rem;
-  color: #5f9ea0;
+  font-size: 0.95rem;
+  color: #ccc;
   margin-bottom: 1rem;
+  flex-grow: 1;
+  text-align: justify;
 }
 
-/* Read More Link */
+/* ✅ Read More Link */
 .readMore {
   font-size: 1rem;
-  font-weight: 600;
-  color: #6495ed;
-  transition: color 0.3s ease, transform 0.3s ease;
-  cursor: pointer; /* Add this line */
+  font-weight: bold;
+  color: #8f43ee;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
 }
 
 .readMore:hover {
-  color: #87cefa;
+  color: #fff;
   transform: translateX(5px);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
+/* ✅ MASSIVE GLOW EFFECT ON HOVER */
+.card:hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #8f43ee, #00d4ff);
+  filter: blur(30px); /* Reduced blur */
+  opacity: 0.7; /* Added opacity to reduce intensity */
+  z-index: -1;
+}
+
+/* ✅ FULL RESPONSIVE */
+@media (max-width: 1024px) {
+  .section {
+    padding: 3rem 1rem;
   }
 
   .heading {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .grid {
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
   }
 }

@@ -1,4 +1,3 @@
-
 export const featuredBlogs = [
     {
       id: 1,
@@ -39,7 +38,7 @@ export const featuredBlogs = [
       id: 6,
       title: "Himgiri Zee University",
       description: "Himgiri Zee University offers programs in agriculture, forestry, engineering, and media, aiming to provide practical knowledge and industry exposure to its students.",
-      image: "/college6.jpg",
+      image: "/college6.png",
       link: "/blog/himgiri-zee-university",
     },
     {
@@ -88,7 +87,7 @@ export const featuredBlogs = [
       id: 13,
       title: "Uttaranchal University",
       description: "Uttaranchal University provides a wide range of courses in arts, science, commerce, and professional studies, focusing on quality education and holistic development.",
-      image: "/college13.jpg",
+      image: "/college13.png",
       link: "/blog/uttaranchal-university",
     },
     {
@@ -112,11 +111,4 @@ export const featuredBlogs = [
       image: "/college16.jpg",
       link: "/blog/beehive-college-of-engineering-and-technology",
     },
-    {
-      id: 17,
-      title: "Dev Rish Institute of Management",
-      description: "Dev Rish Institute of Management provides quality education in law, management, mass communication, and liberal arts, with a strong emphasis on practical learning and industry exposure.",
-      image: "/college17.jpg",
-      link: "/blog/dev-rish-institute-of-management",
-    },
-  ];
+];
