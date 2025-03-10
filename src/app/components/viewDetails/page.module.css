@@ -1,133 +1,161 @@
-/* ✅ Main Container */
+/* Modern Premium Engineering Colleges Page */
+
 .container {
-  max-width: 1300px;
-  margin: auto;
-  padding: 30px;
-  background-color: #f3f4f6;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
+  min-height: 100vh;
+  background: #1a1a2e; /* Single deep blue color */
+  padding: 4rem 2rem;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* ✅ GRID LAYOUT */
+.heading {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  margin-bottom: 3rem;
+  letter-spacing: 2px;
+}
+
 .gridContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  perspective: 1000px;
 }
 
-/* ✅ INDIVIDUAL CARD */
-.section {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
-  padding: 20px;
-  transition: all 0.5s ease;
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-/* ✅ GLASS EFFECT ON HOVER */
-.section:hover {
-  transform: translateY(-15px) scale(1.05);
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.2);
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transition: 0.5s;
 }
 
-/* ✅ CENTER SECTION (PLACEMENT + CONTACT) */
-.centerSection {
-  grid-column: 2;
-  background: linear-gradient(135deg, #ff4757, #ff6b6b);
-  color: #fff;
-  border: none;
-  box-shadow: 0 40px 80px rgba(255, 71, 87, 0.2);
-  transition: all 0.5s ease;
+.card:hover::before {
+  left: 100%;
 }
 
-/* ✅ CENTER SECTION HOVER */
-.centerSection:hover {
-  transform: scale(1.08);
-  background: linear-gradient(135deg, #e84141, #ff4757);
-  box-shadow: 0 60px 120px rgba(255, 71, 87, 0.3);
+.card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4),
+              0 0 30px rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* ✅ HEADING */
-.heading {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #3c3c3c;
-  margin-bottom: 30px;
-}
-
-/* ✅ SUBHEADING */
 .subheading {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #ff4757;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
 
-/* ✅ PARAGRAPH */
+.subheading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #4a90e2; /* Accent color */
+  transition: width 0.3s ease;
+}
+
+.card:hover .subheading::after {
+  width: 100%;
+}
+
 .paragraph {
-  font-size: 1rem;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.8;
+  margin-bottom: 1.5rem;
 }
 
-/* ✅ LIST */
 .list {
   list-style: none;
   padding: 0;
 }
 
 .list li {
-  padding: 10px 0;
-  border-bottom: 1px solid #e5e7eb;
-  transition: all 0.3s;
-  color: #555;
-  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #4a90e2; /* Accent color */
+  opacity: 0.7;
+  transition: all 0.3s ease;
 }
 
 .list li:hover {
-  color: #ff4757;
-  transform: translateX(15px);
-}
-
-/* ✅ CENTER SECTION TEXT (PLACEMENT + CONTACT) */
-.centerSection .paragraph {
   color: #fff;
-  font-size: 1.1rem;
+  padding-left: 2rem;
 }
 
-/* ✅ MOBILE RESPONSIVENESS */
-@media (max-width: 992px) {
-  .gridContainer {
-    grid-template-columns: 1fr 1fr;
-  }
-  .centerSection {
-    grid-column: span 2;
-  }
+.list li:hover::before {
+  color: #fff;
+  opacity: 1;
+  transform: scale(1.2);
 }
 
-@media (max-width: 576px) {
-  .gridContainer {
-    grid-template-columns: 1fr;
-  }
-  .centerSection {
-    grid-column: span 1;
-  }
+/* Refined Scrollbar */
+.container::-webkit-scrollbar {
+  width: 8px;
 }
 
-/* ✅ INSANE HOVER GLOW */
-.section:hover {
-  background: linear-gradient(135deg, #ffffff, #f9f9f9);
-  border: none;
-  box-shadow: 0 60px 120px rgba(0, 0, 0, 0.15);
+.container::-webkit-scrollbar-track {
+  background: #1a1a2e;
 }
 
-/* ✅ CARD BLUR EFFECT */
-.section {
-  backdrop-filter: blur(40px);
+.container::-webkit-scrollbar-thumb {
+  background: #4a90e2;
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: #357abd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .heading {
+    margin-bottom: 2rem;
+  }
 }

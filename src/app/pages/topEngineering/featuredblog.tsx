@@ -14,7 +14,7 @@ const FeaturedBlogs = () => {
         <h2 className={styles.heading}>Featured Blogs</h2>
         <div className={styles.grid}>
           {featuredBlogs.map((blog) => (
-            <div key={blog.id} className={styles.card} onClick={() => router.push(`/components/viewDetails/`)}>
+            <div key={blog.id} className={styles.card}>
               <div className={styles.imageWrapper}> {/* ✅ Ensure it has position: relative in CSS */}
                 <Image
                   src={blog.image}
@@ -28,7 +28,14 @@ const FeaturedBlogs = () => {
               <div className={styles.content}>
                 <h3 className={styles.title}>{blog.title}</h3>
                 <p className={styles.description}>{blog.description}</p>
-                <span className={styles.readMore}>Read More →</span>
+                <span 
+                  className={styles.readMore}
+                  onClick={() => router.push(`/components/viewDetails/`)}
+                  role="button"
+                  tabIndex={0}
+                >
+                  Read More →
+                </span>
               </div>
             </div>
           ))}
