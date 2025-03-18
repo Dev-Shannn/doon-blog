@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
             <motion.button
               className="nav-btn"
               onClick={toggleMenu}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.8}}
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.2 }}
             >
