@@ -1,8 +1,10 @@
 /* General Reset */
-:global(*) {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:global {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
 
 /* Background - Glowing Space Effect */
@@ -39,7 +41,7 @@
   letter-spacing: 3px;
 }
 
-/* ✅ Responsive Grid Layout */
+/* Responsive Grid Layout */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -50,7 +52,7 @@
   margin: 0 auto;
 }
 
-/* ✅ Card Container */
+/* Card Container */
 .card {
   background: #c74343;
   border-radius: 20px;
@@ -70,13 +72,13 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* ✅ Hover Effect */
+/* Hover Effect */
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* ✅ Fixed Image Section */
+/* Fixed Image Section */
 .imageWrapper {
   position: relative;
   width: 100%;
@@ -86,7 +88,7 @@
   border-bottom: 3px solid #333;
 }
 
-/* ✅ Image Style */
+/* Image Style */
 .image {
   position: absolute !important;
   inset: 0 !important;
@@ -97,12 +99,12 @@
   transition: transform 0.5s ease;
 }
 
-/* ✅ Zoom Image on Hover */
+/* Zoom Image on Hover */
 .card:hover .image {
   transform: scale(1.05);
 }
 
-/* ✅ Content Section */
+/* Content Section */
 .content {
   padding: 1.5rem;
   flex-grow: 1;
@@ -110,7 +112,7 @@
   flex-direction: column;
 }
 
-/* ✅ Title */
+/* Title */
 .title {
   font-size: 1.4rem;
   font-weight: 700;
@@ -118,7 +120,7 @@
   margin-bottom: 0.75rem;
 }
 
-/* ✅ Description */
+/* Description */
 .description {
   font-size: 0.95rem;
   color: #ffffff;
@@ -127,7 +129,7 @@
   text-align: justify;
 }
 
-/* ✅ Read More Button */
+/* Read More Button */
 .readMore {
   font-size: 1rem;
   font-weight: bold;
@@ -142,7 +144,7 @@
   transform: translateX(5px);
 }
 
-/* ✅ FULL RESPONSIVE */
+/* FULL RESPONSIVE */
 @media (max-width: 1024px) {
   .section {
     padding: 3rem 1rem;
