@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import styles from "./page.module.css"; // ✅ Correct relative path
 
-import styles from "./page.module.css";
 
 // ✅ Data Array for Cards (Moved Above the Component)
 const data = [
@@ -88,4 +88,4 @@ const TopEngComponent = () => {
   );
 };
 
-export default TopEngComponent;
+export default TopEngComponent; // ✅ Correct export statement
