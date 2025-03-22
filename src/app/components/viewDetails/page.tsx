@@ -1,6 +1,6 @@
-"use client";
+"use client"; // Ensure this file is a Client Component
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import styles from "./page.module.css";
 import { collegeDetails } from "@/app/pages/topEngineering/constant";
@@ -17,7 +17,8 @@ interface CollegeDetails {
   };
 }
 
-const TopEngComponent = () => {
+// Component that uses useSearchParams()
+const CollegeDetailsComponent = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
@@ -99,6 +100,15 @@ const TopEngComponent = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+// ✅ Wrap with Suspense to avoid Next.js build issues
+const TopEngComponent = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CollegeDetailsComponent />
+    </Suspense>
   );
 };
 
