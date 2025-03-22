@@ -112,3 +112,60 @@ export const featuredBlogs = [
       link: "/blog/beehive-college-of-engineering-and-technology",
     },
   ];
+
+  export const collegeDetails = [
+  {
+  
+      id: 1,
+      name: "UPES Dehradun",
+      summary: "UPES Dehradun, established in 2003, is a premier university known for its excellence in engineering, law, management, and applied sciences.",
+      courses: [
+        "B.Tech in Computer Science Engineering",
+        "B.Tech in Mechanical Engineering",
+        "B.Tech in Civil Engineering",
+        "B.Tech in Electrical Engineering",
+        "B.Tech in Aerospace Engineering",
+        "MBA in various specializations",
+      ],
+      feeStructure: [
+        "B.Tech: INR 3,50,000 per year",
+        "M.Tech: INR 2,50,000 per year",
+        "MBA: INR 4,50,000 per year",
+        "LLB: INR 2,00,000 per year",
+      ],
+      placements: "UPES Dehradun has an excellent placement record with top companies visiting the campus for recruitment.",
+      contact: {
+        address: "Energy Acres, Bidholi, Via Prem Nagar, Dehradun, Uttarakhand 248007, India",
+        email: "hi@gmail.com" }
+
+
+
+  } , 
+  {
+  
+    id: 2,
+    name: "Graphic Era Dehradun",
+    summary: "Graphic era , established in 2003, is a premier university known for its excellence in engineering, law, management, and applied sciences.",
+    courses: [
+      "B.Tech in Computer Science Engineering",
+      "B.Tech in Mechanical Engineering",
+      "B.Tech in Civil Engineering",
+      "B.Tech in Electrical Engineering",
+      "B.Tech in Aerospace Engineering",
+      "MBA in various specializations",
+    ],
+    feeStructure: [
+      "B.Tech: INR 3,50,000 per year",
+      "M.Tech: INR 2,50,000 per year",
+      "MBA: INR 4,50,000 per year",
+      "LLB: INR 2,00,000 per year",
+    ],
+    placements: "UPES Dehradun has an excellent placement record with top companies visiting the campus for recruitment.",
+    contact: {
+      address: "Energy Acres, Bidholi, Via Prem Nagar, Dehradun, Uttarakhand 248007, India",
+      email: "hi@gmail.com" }
+
+
+
+}
+]
