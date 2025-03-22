@@ -15,7 +15,7 @@ const TopEngComponent = () => {
   // ✅ Use useEffect to update state only when id changes
   useEffect(() => {
     if (id) {
-      const selectedCollege = collegeDetails.find((college) => college.id == id);
+      const selectedCollege = collegeDetails.find((college) => college.id === Number(id));
       if (selectedCollege) {
         setStateVariable(selectedCollege);
       }
