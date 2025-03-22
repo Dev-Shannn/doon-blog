@@ -111,4 +111,4 @@ export const featuredBlogs = [
       image: "/college16.jpg",
       link: "/blog/beehive-college-of-engineering-and-technology",
     },
-];
+  ];
