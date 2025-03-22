@@ -1,6 +1,18 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+
+interface CollegeDetails {
+  id: number;
+  summary: string;
+  courses?: string[];
+  fees?: string[];
+  placements?: string;
+  contact?: {
+    address?: string;
+    email?: string;
+  };
+}
 import { useSearchParams } from "next/navigation"; 
 import styles from "./page.module.css";
 import { collegeDetails } from "@/app/pages/topEngineering/constant";
@@ -10,7 +22,8 @@ const TopEngComponent = () => {
   const id = searchParams.get("id"); // Get 'id' from query params
   console.log("ID:", id);
 
-  const [stateVariable, setStateVariable] = useState({});
+  const [stateVariable, setStateVariable] = useState<CollegeDetails | null>(null);
+ 
 
   // ✅ Use useEffect to update state only when id changes
   useEffect(() => {
@@ -21,7 +34,7 @@ const TopEngComponent = () => {
       }
     }
   }, [id]); // Dependency array ensures this runs only when `id` changes
-
+            {stateVariable?.summary ?? "UPES Dehradun, established in 2003, is a premier university known for its excellence in engineering, law, management, and applied sciences."}
   console.log("State Variable:", stateVariable);
 
   return (
