@@ -1,161 +1,93 @@
-/* Modern Premium Engineering Colleges Page */
-
+/* 🌌 Full Page Container */
 .container {
-  min-height: 100vh;
-  background: #1a1a2e; /* Single deep blue color */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
   padding: 4rem 2rem;
-  position: relative;
-  overflow-x: hidden;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* ✨ Animated Heading */
 .heading {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
   color: #fff;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
   margin-bottom: 3rem;
+  text-transform: uppercase;
   letter-spacing: 2px;
 }
 
+/* 🏗️ Grid Layout */
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  perspective: 1000px;
 }
 
+/* 📜 Individual Card */
 .card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
   padding: 2rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.05),
-    transparent
-  );
-  transition: 0.5s;
-}
-
-.card:hover::before {
-  left: 100%;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4),
-              0 0 30px rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.subheading {
-  font-size: 1.5rem;
   color: #fff;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  text-align: left;
+}
+
+/* 🔥 Card Hover Effect */
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 🏆 Subheading Style */
+.subheading {
+  font-size: 1.6rem;
+  font-weight: 700;
   margin-bottom: 1rem;
-  position: relative;
-  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.subheading::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 2px;
-  background: #4a90e2; /* Accent color */
-  transition: width 0.3s ease;
-}
-
-.card:hover .subheading::after {
-  width: 100%;
-}
-
+/* 📄 Paragraph Style */
 .paragraph {
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
 }
 
+/* 📌 List Styling */
 .list {
-  list-style: none;
-  padding: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .list li {
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  position: relative;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.list li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: #4a90e2; /* Accent color */
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
-
-.list li:hover {
-  color: #fff;
-  padding-left: 2rem;
-}
-
-.list li:hover::before {
-  color: #fff;
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-/* Refined Scrollbar */
-.container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.container::-webkit-scrollbar-track {
-  background: #1a1a2e;
-}
-
-.container::-webkit-scrollbar-thumb {
-  background: #4a90e2;
-  border-radius: 4px;
-}
-
-.container::-webkit-scrollbar-thumb:hover {
-  background: #357abd;
-}
-
-/* Responsive Design */
+/* 🌎 RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .container {
     padding: 2rem 1rem;
   }
-  
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+
   .card {
     padding: 1.5rem;
-  }
-  
-  .heading {
-    margin-bottom: 2rem;
   }
 }

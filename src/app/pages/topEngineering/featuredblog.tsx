@@ -20,7 +20,7 @@ const FeaturedBlogs = () => {
                   src={blog.image}
                   alt={blog.title}
                   layout="fill" // ✅ Alternative to `fill`
-                  objectFit="cover"
+                  objectFit="cover" 
                   className={styles.image}
                   priority={blog.id === 1}
                 />
@@ -30,7 +30,7 @@ const FeaturedBlogs = () => {
                 <p className={styles.description}>{blog.description}</p>
                 <span 
                   className={styles.readMore}
-                  onClick={() => router.push(`/components/viewDetails/`)}
+                  onClick={() => router.push(`/components/viewDetails?id=${blog.id}`)} // ✅ Use router.push
                   role="button"
                   tabIndex={0}
                 >
